@@ -4,12 +4,13 @@ import com.udacity.asteroidradar.model.PictureOfDay
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface AsteroidService {
-    @GET("/icare/api/public/survey/list")
-    fun getFeed(): Call<JSONObject>
+    @GET("neo/rest/v1/feed")
+    suspend fun getFeed(): String
 
-    @GET("/iplanetary/apod")
+    @GET("planetary/apod")
     fun imageOfTheDay(): Call<PictureOfDay>
 
 
